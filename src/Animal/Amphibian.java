@@ -18,19 +18,6 @@ public  class Amphibian extends Animal {
     public void setHome(String home) {
         this.home = home;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Amphibian amphibian = (Amphibian) o;
-        return Objects.equals(home, amphibian.home);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(home);
-    }
     public  void hunt(){
         System.out.println("охотятся");
     }
@@ -50,5 +37,19 @@ public  class Amphibian extends Animal {
         return "кличка - " +getName()+
                 ", возраст - " +getBirthYear()+", место обитания - "+ home ;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Amphibian amphibian = (Amphibian) o;
+        return Objects.equals(home, amphibian.home);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(home);
+    }
+
 }
 

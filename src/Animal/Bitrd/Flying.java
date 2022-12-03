@@ -13,7 +13,29 @@ public  class Flying extends Bird {
     public String getTypeOfMovement() {
         return typeOfMovement;
     }
+    public static void walk(){
+        System.out.println("fly");
+    }
+    public void hunt(){
+        System.out.println(" ест  рыбу ");
+    }
 
+    @Override
+    public void eat() {
+        super.eat();
+    }
+
+    @Override
+    public void sleep() {
+        super.sleep();
+    }
+
+    @Override
+    public String toString() {
+        return "кличка - " +getName()+
+                ", возраст - " +getBirthYear()+", место обитания - "+ getHome()+
+                ", тип передвижения - "+getTypeOfMovement() ;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -27,17 +49,6 @@ public  class Flying extends Bird {
     public int hashCode() {
         return Objects.hash(super.hashCode(), typeOfMovement);
     }
-    public static void walk(){
-        System.out.println("fly");
-    }
-    public void hunt(){
-        System.out.println(" ест  рыбу ");
-    }
 
-    @Override
-    public String toString() {
-        return "кличка - " +getName()+
-                ", возраст - " +getBirthYear()+", место обитания - "+ getHome()+
-                ", тип передвижения - "+getTypeOfMovement() ;
-    }
+
 }

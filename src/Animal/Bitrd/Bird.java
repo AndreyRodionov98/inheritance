@@ -6,7 +6,10 @@ import java.util.Objects;
 
 public abstract class Bird  extends Animal {
     private String home;
-
+    public Bird(String home,String name,int birthYear) {
+        super(name,birthYear);
+        this.home = home;
+    }
     public String getHome() {
         return home;
     }
@@ -14,7 +17,16 @@ public abstract class Bird  extends Animal {
     public void setHome(String home) {
         this.home = home;
     }
-
+    public void eat(){
+        System.out.println("кушают  насекомых");
+    }
+    public void sleep(){
+        System.out.println("спят 4 часа");
+    }
+    public void go(){
+        System.out.println("летают");
+    }
+    public abstract void hunt();
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,22 +38,6 @@ public abstract class Bird  extends Animal {
     @Override
     public int hashCode() {
         return Objects.hash(home);
-    }
-
-    public Bird(String home,String name,int birthYear) {
-        super(name,birthYear);
-        this.home = home;
-    }
-    public abstract void hunt();
-    public void eat(){
-        System.out.println("кушают  насекомых");
-
-    }
-    public void sleep(){
-        System.out.println("спят 4 часа");
-    }
-    public void go(){
-        System.out.println("летают");
     }
 
 

@@ -5,6 +5,18 @@ import java.util.Objects;
 public abstract class Animal {
     private String name;
     private int birthYear;
+    public Animal(String name, int birthYear) {
+        if (name==null||name.isBlank()||name.isEmpty()){
+            this.name="animal";
+        }else{
+            this.name = name;
+        }
+        if (birthYear==0){
+            this.birthYear=1;
+        }else {
+            this.birthYear = birthYear;
+        }
+    }
 
     public String getName() {
         return name;
@@ -18,19 +30,19 @@ public abstract class Animal {
     public void setName(String name) {
         name = name;
     }
+    public abstract void eat();
 
-    public Animal(String name, int birthYear) {
-        if (name==null||name.isBlank()||name.isEmpty()){
-            this.name="animal";
-        }else{
-            this.name = name;
-        }
-        if (birthYear==0){
-            this.birthYear=1;
-        }else {
-        this.birthYear = birthYear;
+    public void sleep() {
+        System.out.println("leep");
+
     }
+
+    public void go() {
+        System.out.println("go");
+
     }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -44,12 +56,6 @@ public abstract class Animal {
     public int hashCode() {
         return Objects.hash(name, birthYear);
     }
-    public abstract void eat();
 
-    public void sleep() {
-    }
-
-    public void go() {
-    }
 
 }

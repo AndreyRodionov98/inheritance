@@ -19,21 +19,6 @@ public  class Predator extends Mammal {
     public String getTypeOfFood() {
         return typeOfFood;
     }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Predator predator = (Predator) o;
-        return Objects.equals(typeOfFood, predator.typeOfFood);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(typeOfFood);
-    }
-
     public static void walk() {
         System.out.println("ходят на своей территории");
     }
@@ -53,9 +38,29 @@ public  class Predator extends Mammal {
     }
 
     @Override
+    public void sleep() {
+        super.sleep();
+    }
+
+    @Override
     public String toString() {
         return "Кличка - " + getName() + "возраст - " + getBirthYear() +
                 ", тип еды - " + typeOfFood + ", место обитания - " + getHome() +
                 ", скорость передвижения - " + getSpeed()+" км/ч " ;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Predator predator = (Predator) o;
+        return Objects.equals(typeOfFood, predator.typeOfFood);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(typeOfFood);
+    }
+
+
+
 }

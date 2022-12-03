@@ -10,12 +10,37 @@ public class NotFlying extends Bird {
         super(home, name, birthYear);
         this.typeOfMovement = typeOfMovement;
     }
-
-
     public String getTypeOfMovement() {
         return typeOfMovement;
     }
+    public  void walk(){
+        System.out.println("run");
+    }
+    public void hunt(){
+        System.out.println(" ест траву и насекомых");
+    }
 
+    @Override
+    public void eat() {
+        super.eat();
+    }
+
+    @Override
+    public void sleep() {
+        super.sleep();
+    }
+
+    @Override
+    public void go() {
+        super.go();
+    }
+
+    @Override
+    public String toString() {
+        return "кличка - " +getName()+
+                ", возраст - " +getBirthYear()+", место обитания - "+ getHome()+
+                ", тип передвижения - "+getTypeOfMovement() ;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,17 +53,6 @@ public class NotFlying extends Bird {
     public int hashCode() {
         return Objects.hash(typeOfMovement);
     }
-    public  void walk(){
-        System.out.println("run");
-    }
-    public void hunt(){
-        System.out.println(" ест траву и насекомых");
-    }
 
-    @Override
-    public String toString() {
-        return "кличка - " +getName()+
-                ", возраст - " +getBirthYear()+", место обитания - "+ getHome()+
-                ", тип передвижения - "+getTypeOfMovement() ;
-    }
+
 }

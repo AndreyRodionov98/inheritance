@@ -5,6 +5,10 @@ public class Bus extends Transport {
         super( brand,  model,  year,  country,  color,  maxSpeed,  fuelPercentage);
     }
 
+    @Override
+    public void refill() {
+        System.out.println(" можно заправлять бензином или дизелем на заправке"+getFuelPercentage());
+    }
 
     @Override
     public String toString() {
@@ -15,8 +19,4 @@ public class Bus extends Transport {
                 getColor() +" цвета "+" максимальная скорость передвижения - "+getMaxSpeed();
     }
 
-    @Override
-    public void refill() {
-        System.out.println(" можно заправлять бензином или дизелем на заправке"+getFuelPercentage());
-    }
 }

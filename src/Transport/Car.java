@@ -12,87 +12,6 @@ public class Car extends Transport {
     private Key key;
 
     private Insurance  insurance;
-
-    @Override
-    public void refill() {
-        System.out.println("  можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар"+getFuelPercentage());
-    }
-
-    public static class Key{
-        private final boolean remoteEngineStart;
-        private final boolean keylessAccess;
-
-
-
-        public Key(boolean remoteEngineStart, boolean keylessAccess) {
-            this.remoteEngineStart = remoteEngineStart;
-            this.keylessAccess = keylessAccess;
-
-        }
-        public Key(){
-            this(false,false);
-        }
-        public boolean isRemoteEngineStart() {
-            return remoteEngineStart;
-        }
-
-        public boolean isKeylessAccess() {
-            return keylessAccess;
-        }
-    }
-    public static class Insurance {
-        private final LocalDate validityOfInsurance;
-        private final double costOfInsurance;
-        private final String numberOfInsurance;
-
-        public Insurance(LocalDate validityOfInsurance, double costOfInsurance, String numberOfInsurance) {
-            if (validityOfInsurance == null) {
-                this.validityOfInsurance = LocalDate.now().plusDays(365);
-            } else {
-                this.validityOfInsurance = validityOfInsurance;
-            }
-            this.costOfInsurance = costOfInsurance;
-            if (numberOfInsurance == null) {
-                this.numberOfInsurance = "123456789";
-            } else {
-
-                this.numberOfInsurance = numberOfInsurance;
-            }
-        }
-
-        public LocalDate getValidityOfInsurance() {
-            return validityOfInsurance;
-        }
-
-        public double getCostOfInsurance() {
-            return costOfInsurance;
-        }
-
-        public String getNumberOfInsurance() {
-            return numberOfInsurance;
-        }
-        public void chekValidityOfInsurance(){
-            if (validityOfInsurance.isBefore(LocalDate.now())||validityOfInsurance.isEqual(LocalDate.now())){
-                System.out.println("нужно срочно ехать оформлять новую страховку");
-
-            }
-        }
-        public void chekNumber(){
-            if (numberOfInsurance.length()!=9){
-                System.out.println("номер страховки некорректный");
-
-            }
-        }
-        public Insurance(){
-            this(null,10000,null);
-        }
-
-
-    }
-
-
-
-
     public Car(String brand,String model, int year, String country,
                String color, double engineVolume, String transmission,
                String bodyType, String registrationNumber, int numberOfSeats,
@@ -152,7 +71,92 @@ public class Car extends Transport {
     }
 
 
+    @Override
+    public void refill() {
+        System.out.println("  можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар"+getFuelPercentage());
+    }
 
+    public static class Key{
+        private final boolean remoteEngineStart;
+        private final boolean keylessAccess;
+        private Key key;
+
+
+        public Key(boolean remoteEngineStart, boolean keylessAccess) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
+
+        }
+        public Key getKey() {
+            return key;
+        }
+
+        public void setKey(Key key) {
+            this.key = key;
+        }
+
+        public Key(){
+            this(false,false);
+        }
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isKeylessAccess() {
+            return keylessAccess;
+        }
+
+    }
+    public static class Insurance {
+        private final LocalDate validityOfInsurance;
+        private final double costOfInsurance;
+        private final String numberOfInsurance;
+
+        public Insurance(LocalDate validityOfInsurance, double costOfInsurance, String numberOfInsurance) {
+            if (validityOfInsurance == null) {
+                this.validityOfInsurance = LocalDate.now().plusDays(365);
+            } else {
+                this.validityOfInsurance = validityOfInsurance;
+            }
+            this.costOfInsurance = costOfInsurance;
+            if (numberOfInsurance == null) {
+                this.numberOfInsurance = "123456789";
+            } else {
+
+                this.numberOfInsurance = numberOfInsurance;
+            }
+        }
+        public LocalDate getValidityOfInsurance() {
+            return validityOfInsurance;
+        }
+
+        public double getCostOfInsurance() {
+            return costOfInsurance;
+        }
+
+        public String getNumberOfInsurance() {
+            return numberOfInsurance;
+        }
+
+
+        public void chekValidityOfInsurance(){
+            if (validityOfInsurance.isBefore(LocalDate.now())||validityOfInsurance.isEqual(LocalDate.now())){
+                System.out.println("нужно срочно ехать оформлять новую страховку");
+
+            }
+        }
+        public void chekNumber(){
+            if (numberOfInsurance.length()!=9){
+                System.out.println("номер страховки некорректный");
+
+            }
+        }
+        public Insurance(){
+            this(null,10000,null);
+        }
+
+
+    }
     public Insurance getInsurance() {
         return insurance;
     }
@@ -160,19 +164,6 @@ public class Car extends Transport {
     public void setInsurance(Insurance insurance) {
         this.insurance = insurance;
     }
-
-    public Key getKey() {
-        return key;
-    }
-
-    public void setKey(Key key) {
-        this.key = key;
-    }
-
-
-
-
-
 
 
     public double getEngineVolume() {
@@ -205,6 +196,13 @@ public class Car extends Transport {
     public String getSummerOrWinterTires() {
         return summerOrWinterTires;
     }
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        this.key = key;
+    }
 
     @Override
     public String toString() {
@@ -224,6 +222,7 @@ public class Car extends Transport {
                         +(", номер страховки "+getInsurance().numberOfInsurance)
                         +", стоимость страховки "+getInsurance().costOfInsurance+", максимальная скорость -"+getMaxSpeed()+" км/ч";
     }
+
 
 
 

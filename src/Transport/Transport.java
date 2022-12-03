@@ -10,6 +10,45 @@ public abstract class Transport {
     private  String color;
     private int maxSpeed;
     protected double fuelPercentage;
+    public Transport(String brand, String model, int year, String country, String color, int maxSpeed, double fuelPercentage) {
+        if (brand == null || brand.isEmpty() || brand.isBlank()) {
+            this.brand = "default";
+        } else {
+            this.brand = brand;
+        }
+
+        if (model == null || model.isEmpty() || model.isBlank()) {
+            this.model = "default";
+        } else {
+            this.model = model;
+        }
+
+        if (year <= 0) {
+            this.year = 2000;
+        } else {
+            this.year = year;
+        }
+
+        if (country == null || country.isEmpty() || country.isBlank()) {
+            this.country = "default";
+        } else {
+            this.country = country;
+        }
+
+        if (color == null || color.isEmpty() || color.isBlank()) {
+            this.color = " белый ";
+        } else {
+            this.color = color;
+        }
+
+        this.maxSpeed = maxSpeed;
+        if (fuelPercentage == 0.0) {
+            this.fuelPercentage = 100.00;
+        } else {
+            this.fuelPercentage = fuelPercentage;
+        }
+    }
+
 
     public double getFuelPercentage() {
         return fuelPercentage;
@@ -60,44 +99,6 @@ public abstract class Transport {
         return model;
     }
 
-    public Transport(String brand, String model, int year, String country, String color, int maxSpeed, double fuelPercentage) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-
-        if (country == null || country.isEmpty() || country.isBlank()) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
-
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = " белый ";
-        } else {
-            this.color = color;
-        }
-
-        this.maxSpeed = maxSpeed;
-        if (fuelPercentage == 0.0) {
-            this.fuelPercentage = 100.00;
-        } else {
-            this.fuelPercentage = fuelPercentage;
-        }
-    }
 
     public abstract void  refill() ;
 }

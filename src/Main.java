@@ -39,6 +39,7 @@ public class Main {
         System.out.println(Bird.toString());
         Bird.refill();
 
+
         Train City = new Train(" 1700", " ", "Ленинградский вокзал ",
                 "Ленинград-Пассажирский ", 8, "Ленинград", "D-125",
                 2019, "Россия", " ", 270, 67.00);
@@ -66,18 +67,23 @@ public class Main {
         Herbivore.walk();
         Giraff.eat();
         Giraff.go();
+        Giraff.sleep();
         Herbivore Gazelle=new Herbivore("Газ",9,"трава","",50);
         System.out.println(Gazelle.toString());
         Herbivore.graze();
         Herbivore.walk();
         Gazelle.go();
         Gazelle.eat();
+        Gazelle.sleep();
+        Gazelle.getHome();
         Herbivore Horse=new Herbivore("",4,"трава","степь",40);
         System.out.println(Horse.toString());
         Herbivore.walk();
         Herbivore.graze();
         Horse.eat();
         Horse.go();
+        Horse.sleep();
+        Horse.getHome();
 
 
         Predator Hyena=new Predator("",10,"падаль","Africa",45);
@@ -86,25 +92,33 @@ public class Main {
         Predator.walk();
         Hyena.eat();
         Hyena.go();
+        Hyena.sleep();
         Predator Tiger=new Predator("тигр",15,"животные","европа",50);
         System.out.println(Tiger.toString());
         Predator.hunt();
         Predator.walk();
         Tiger.go();
         Tiger.eat();
+        Tiger.sleep();
         Predator Bear=new Predator("",9,"всеядный","",45);
-        Predator.hunt();
-        Predator.walk();
+        Bear.hunt();
+        Bear.walk();
+        Bear.sleep();
+        Bear.eat();
+        Bear.go();
+
         Amphibian Frog= new Amphibian("лягушка ",2,"не засушливые места ");
         System.out.println(Frog.toString());
         Frog.eat();
         Frog.go();
         Frog.sleep();
+        Frog.hunt();
         Amphibian Snake= new Amphibian("змейка ",2,"не засушливые места ");
         System.out.println(Snake.toString());
         Snake.go();
         Snake.eat();
         Snake.sleep();
+        Snake.hunt();
 
 
         NotFlying Peacock=new NotFlying("НАСЕКОМЫЕ", "S", "PEACOCK", 12) ;
@@ -112,34 +126,45 @@ public class Main {
         Peacock.go();
         Peacock.eat();
         Peacock.sleep();
+        Peacock.hunt();
+        Peacock.walk();
         NotFlying Penguin=new NotFlying("fish","north","penguin",3);
         System.out.println(Penguin.toString());
         Penguin.sleep();
         Penguin.eat();
         Penguin.go();
+        Penguin.walk();
+        Penguin.hunt();
         NotFlying Dodo=new NotFlying("","","",3) ;
         System.out.println(Dodo.toString());
         Dodo.eat();
         Dodo.walk();
         Dodo.go();
+        Dodo.sleep();
+        Dodo.hunt();
 
 
         Flying Seagull=new Flying("fish","earth","",4);
         System.out.println(Seagull.toString());
         Seagull.go();
         Seagull.eat();
+        Seagull.sleep();
         Seagull.hunt();
+        Seagull.walk();
         Flying Albatross=new Flying("fish","sea","albatross",5);
         System.out.println(Albatross.toString());
         Albatross.hunt();
         Albatross.eat();
         Albatross.go();
+        Albatross.sleep();
+        Albatross.walk();
         Flying Falcon=new Flying("","","",6);
         System.out.println(Falcon.toString());
         Falcon.go();
         Falcon.eat();
         Falcon.hunt();
         Falcon.sleep();
+        Falcon.walk();
 
 
 

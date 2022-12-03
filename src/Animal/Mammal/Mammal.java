@@ -37,7 +37,18 @@ public abstract class Mammal extends Animal {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
+    public static void walk() {
+    }
+    public void eat(){
+        System.out.println("кушают  траву и мясо");
 
+    }
+    public void sleep(){
+        System.out.println("спят 8 часов");
+    }
+    public   void go(){
+        System.out.println("ходят");
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,19 +61,4 @@ public abstract class Mammal extends Animal {
     public int hashCode() {
         return Objects.hash(home, speed);
     }
-
-    public static void walk() {
-    }
-
-    public void eat(){
-        System.out.println("кушают  траву и мясо");
-
-    }
-    public void sleep(){
-        System.out.println("спят 8 часов");
-    }
-    public   void go(){
-        System.out.println("ходят");
-    }
-
 }

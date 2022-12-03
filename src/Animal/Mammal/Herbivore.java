@@ -18,7 +18,32 @@ public  class Herbivore extends Mammal {
     public String getTypeOfFood() {
         return typeOfFood;
     }
+    public static void walk(){
+        System.out.println("ходят в поисках пищи");
+    }
+    public static void graze(){
+        System.out.println("пасутся");
+    }
+    @Override
+    public void eat() {
+        super.eat();
+    }
+    @Override
+    public  void go() {
+        super.go();
+    }
 
+    @Override
+    public void sleep() {
+        super.sleep();
+    }
+
+    @Override
+    public String toString() {
+        return "Кличка -" +getName()+",  возраст - "+getBirthYear()+
+                ",  тип еды - " + typeOfFood + ", место обитания -  "+getHome()+
+                ", скорость передвижения - "+getSpeed()+"км/ч" ;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -27,34 +52,8 @@ public  class Herbivore extends Mammal {
         Herbivore herbivore = (Herbivore) o;
         return Objects.equals(typeOfFood, herbivore.typeOfFood);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), typeOfFood);
-    }
-
-    public static void walk(){
-        System.out.println("ходят в поисках пищи");
-    }
-
-    public static void graze(){
-        System.out.println("пасутся");
-    }
-
-    @Override
-    public void eat() {
-        super.eat();
-    }
-
-    @Override
-    public  void go() {
-        super.go();
-    }
-
-    @Override
-    public String toString() {
-        return "Кличка -" +getName()+",  возраст - "+getBirthYear()+
-                ",  тип еды - " + typeOfFood + ", место обитания -  "+getHome()+
-                ", скорость передвижения - "+getSpeed()+"км/ч" ;
     }
 }
